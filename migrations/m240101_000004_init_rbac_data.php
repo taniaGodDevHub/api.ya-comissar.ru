@@ -45,14 +45,16 @@ class m240101_000004_init_rbac_data extends Migration
 
         $auth->addChild($user, $viewUsers);
 
-        // Создание администратора по умолчанию
+        // Создание администратора по умолчанию (first_name/last_name — в m240101_000006)
         $adminUser = new \app\models\User();
         $adminUser->username = 'admin';
         $adminUser->email = 'admin@example.com';
         $adminUser->setPassword('admin123');
         $adminUser->generateAuthKey();
         $adminUser->status = \app\models\User::STATUS_ACTIVE;
-        $adminUser->save();
+        if (!$adminUser->save(false)) {
+            throw new \yii\db\Exception('Не удалось создать пользователя admin: ' . json_encode($adminUser->errors));
+        }
 
         // Назначение роли администратора
         $auth->assign($admin, $adminUser->id);
