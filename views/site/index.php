@@ -12,7 +12,7 @@ $this->title = 'School Avarcom Backend';
     <div class="jumbotron">
         <h1>Добро пожаловать!</h1>
 
-        <p class="lead">Это административная панель School Avarcom Backend</p>
+        <p class="lead">Это административная панель School ya-comissar Backend</p>
 
         <?php if (Yii::$app->user->isGuest): ?>
             <p><?= Html::a('Войти в систему', ['/user/login'], ['class' => 'btn btn-lg btn-success']) ?></p>

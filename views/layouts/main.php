@@ -69,7 +69,7 @@ use app\widgets\Alert;
 
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
-        <span class="text-muted">&copy; <?= date('Y') ?> School Avarcom Backend</span>
+        <span class="text-muted">&copy; <?= date('Y') ?> School Ya-comissar Backend</span>
     </div>
 </footer>
 

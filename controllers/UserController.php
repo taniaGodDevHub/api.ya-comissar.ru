@@ -170,7 +170,7 @@ class UserController extends Controller
         $tempToken->token = $token;
         
         if ($tempToken->save()) {
-            $registrationUrl = 'https://112avarkom.ru/register?token='.$token;
+            $registrationUrl = 'https://academy.ya-comissar.ru/register?token='.$token;
             
             Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
             return [
